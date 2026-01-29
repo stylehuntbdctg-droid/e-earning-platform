@@ -138,16 +138,13 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Redesigned */}
       <section className="relative py-16 md:py-24 overflow-hidden">
-        {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-20" 
                style={{ backgroundColor: '#8B5CF6' }}></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full opacity-20" 
                style={{ backgroundColor: '#10B981' }}></div>
           
-          {/* Floating Shapes */}
           <div className="absolute top-1/4 left-10 w-16 h-16 rounded-lg rotate-12 animate-pulse"
                style={{ backgroundColor: 'rgba(79, 70, 229, 0.15)' }}></div>
           <div className="absolute bottom-1/4 right-20 w-12 h-12 rounded-full animate-bounce"
@@ -156,17 +153,15 @@ const Home = () => {
                style={{ backgroundColor: 'rgba(16, 185, 129, 0.15)' }}></div>
         </div>
 
-        {/* Gradient Background */}
         <div className="absolute inset-0" 
              style={{
-               background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(139, 92, 246, 0.08) 50%, rgba(236, 72, 153, 0.05) 100%)'
+               backgroundColor: '#F8FAFC'
              }}>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             
-            {/* Tagline Badge */}
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-8 shadow-sm border border-gray-200">
               <div className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#4F46E5' }}></div>
               <span className="text-sm font-medium" style={{ color: '#4F46E5' }}>
@@ -174,17 +169,15 @@ const Home = () => {
               </span>
             </div>
 
-            {/* Main Heading with Gradient */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               <span className="block">বাংলায় শিখুন,</span>
               <span className="block mt-2">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+                <span style={{ color: '#4F46E5' }}>
                   দক্ষ হয়ে উঠুন
                 </span>
               </span>
             </h1>
 
-            {/* Animated Subheading */}
             <div className="h-20 mb-8">
               <p className="text-xl md:text-2xl text-gray-700 mb-4">
                 <span className="typing-effect">
@@ -193,17 +186,16 @@ const Home = () => {
               </p>
             </div>
 
-            {/* Stats Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-2xl mx-auto">
               {[
-                { number: '১০০০+', label: 'বাংলা কোর্স', color: 'from-purple-500 to-indigo-500' },
-                { number: '৫০,০০০+', label: 'সক্রিয় শিক্ষার্থী', color: 'from-blue-500 to-cyan-500' },
-                { number: '২০০+', label: 'বিশেষজ্ঞ ইনস্ট্রাক্টর', color: 'from-green-500 to-emerald-500' },
-                { number: '৯৫%', label: 'সন্তুষ্টি হার', color: 'from-pink-500 to-rose-500' }
+                { number: '১০০০+', label: 'বাংলা কোর্স', color: '#4F46E5' },
+                { number: '৫০,০০০+', label: 'সক্রিয় শিক্ষার্থী', color: '#3B82F6' },
+                { number: '২০০+', label: 'বিশেষজ্ঞ ইনস্ট্রাক্টর', color: '#10B981' },
+                { number: '৯৫%', label: 'সন্তুষ্টি হার', color: '#EC4899' }
               ].map((stat, index) => (
                 <div key={index} 
                      className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
-                  <div className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}>
+                  <div className="text-2xl md:text-3xl font-bold mb-1" style={{ color: stat.color }}>
                     {stat.number}
                   </div>
                   <div className="text-gray-600 text-sm">{stat.label}</div>
@@ -211,13 +203,11 @@ const Home = () => {
               ))}
             </div>
 
-            {/* CTA Buttons with Hover Effects */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 className="group relative px-8 py-4 rounded-xl font-medium text-lg text-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 style={{ 
-                  backgroundColor: '#4F46E5',
-                  background: 'linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%)'
+                  backgroundColor: '#4F46E5'
                 }}
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
@@ -226,7 +216,7 @@ const Home = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
                 </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="absolute inset-0 bg-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </button>
               
               <button 
@@ -234,7 +224,7 @@ const Home = () => {
                 style={{ 
                   borderColor: '#4F46E5', 
                   color: '#4F46E5',
-                  background: 'rgba(255, 255, 255, 0.9)'
+                  backgroundColor: 'rgba(255, 255, 255, 0.9)'
                 }}
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
@@ -244,11 +234,10 @@ const Home = () => {
                   </svg>
                   ফ্রি শিখুন
                 </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="absolute inset-0 bg-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </button>
             </div>
 
-            {/* Trust Indicators */}
             <div className="mt-16 pt-8 border-t border-gray-200">
               <p className="text-gray-600 mb-4">আমাদের বিশ্বাস করেন</p>
               <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
@@ -263,7 +252,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
       <div className="bg-white border-y py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -278,7 +266,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Categories Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -302,7 +289,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Courses */}
       <section style={{ backgroundColor: 'rgb(233,231,253)' }} className="py-16">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
@@ -381,7 +367,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Instructors Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -438,7 +423,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Free Courses Banner */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div 
@@ -463,8 +447,7 @@ const Home = () => {
                 <button 
                   className="px-8 py-3 rounded-lg font-medium text-white hover:shadow-lg transition-shadow transform hover:-translate-y-0.5"
                   style={{ 
-                    backgroundColor: '#4F46E5',
-                    background: 'linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%)'
+                    backgroundColor: '#4F46E5'
                   }}
                 >
                   ফ্রি কোর্স দেখুন
@@ -486,7 +469,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Scroll to Top Button with Progress Circle */}
       <button
         id="scrollToTop"
         className="fixed bottom-8 right-8 w-14 h-14 rounded-full shadow-lg z-50 flex items-center justify-center transition-all duration-300 opacity-0 scale-0 hover:scale-110 hover:shadow-xl group"
@@ -494,7 +476,6 @@ const Home = () => {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="শীর্ষে যান"
       >
-        {/* Progress Circle */}
         <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
           <circle
             cx="50"
@@ -518,7 +499,6 @@ const Home = () => {
           />
         </svg>
         
-        {/* Arrow Icon */}
         <svg 
           className="relative w-6 h-6 text-white transform transition-transform duration-300 group-hover:-translate-y-1" 
           fill="none" 
@@ -528,7 +508,6 @@ const Home = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
         
-        {/* Progress Percentage (Optional) */}
         <div className="absolute -top-1 -right-1 bg-white text-indigo-600 text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-sm">
           {Math.round(scrollProgress)}%
         </div>
