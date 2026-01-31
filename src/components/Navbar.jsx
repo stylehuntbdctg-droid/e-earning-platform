@@ -148,7 +148,7 @@ const Navbar = () => {
                 </div>
               </div>
               
-              {/* Divider */}
+        
               <div className="w-px h-5 mx-2 dark:bg-gray-600" style={{ background: 'rgba(0, 0, 0, 0.1)' }}></div>
               
               {/* Dark/Light Mode Toggle Button */}
