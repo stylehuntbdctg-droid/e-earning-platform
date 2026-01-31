@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -106,21 +107,4 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a5b4fc;
-}
-
-/* Dark mode styles */
-.dark {
-  color-scheme: dark;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #374151;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #4B5563;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #6B7280;
 }
