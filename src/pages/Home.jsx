@@ -166,14 +166,6 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             
-            {/* Tagline Badge
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-8 shadow-sm border border-gray-200">
-              <div className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#4F46E5' }}></div>
-              <span className="text-sm font-medium" style={{ color: '#4F46E5' }}>
-                🇧🇩 Bangladesh's Largest Online Learning Platform
-              </span>
-            </div> */}
-
             {/* Main Heading with Gradient */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               <span className="block">Learn in Bangla,</span>
@@ -278,26 +270,283 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Categories Section */}
+      {/* Categories Section - Redesigned with Rocket Growing Roots */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Browse by Category</h2>
-            <p className="text-gray-600">Select your preferred subject</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Explore Learning Paths</h2>
+            <p className="text-gray-600">Launch your journey from our rocket to growing knowledge roots</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {categories.map((category, index) => (
-              <div 
-                key={index} 
-                className="p-6 rounded-xl text-center hover:shadow-md transition-shadow cursor-pointer transform hover:-translate-y-1 duration-300"
-                style={{ backgroundColor: 'rgb(229,230,250)' }}
-              >
-                <div className="text-4xl mb-3">{category.icon}</div>
-                <h3 className="font-bold text-gray-900 mb-1">{category.name}</h3>
-                <p className="text-gray-600 text-sm">{category.count} courses</p>
+          {/* Rocket with Growing Roots */}
+          <div className="relative mb-20">
+            {/* Rocket at Center */}
+            <div className="absolute left-1/2 top-0 transform -translate-x-1/2 z-20">
+              <div className="relative">
+                {/* Rocket Body */}
+                <div className="text-5xl animate-bounce duration-1000">🚀</div>
+                
+                {/* Rocket Base - Connection Point for Roots */}
+                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+                  <div className="w-8 h-8 rounded-full"
+                       style={{ backgroundColor: 'rgba(79, 70, 229, 0.2)' }}>
+                  </div>
+                </div>
+                
+                {/* Rocket Flame */}
+                <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
+                  <div className="flex flex-col items-center">
+                    {[...Array(3)].map((_, i) => (
+                      <div 
+                        key={i}
+                        className="w-4 h-8 rounded-t-full animate-pulse"
+                        style={{ 
+                          backgroundColor: i === 0 ? '#F59E0B' : 
+                                         i === 1 ? '#F97316' : '#EF4444',
+                          animationDelay: `${i * 100}ms`,
+                          marginTop: `-${i * 2}px`,
+                          opacity: 0.8 - (i * 0.2)
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
               </div>
+            </div>
+            
+            {/* Central Connection Point */}
+            <div className="absolute left-1/2 top-16 transform -translate-x-1/2 z-10">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center"
+                   style={{ 
+                     backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                     border: '2px dashed rgba(139, 92, 246, 0.3)'
+                   }}>
+                <div className="w-8 h-8 rounded-full animate-pulse"
+                     style={{ backgroundColor: 'rgba(79, 70, 229, 0.3)' }}></div>
+              </div>
+            </div>
+            
+            {/* Main Roots Growing from Rocket */}
+            <div className="absolute left-1/2 top-32 transform -translate-x-1/2 z-0 w-full">
+              {/* Main Root Trunk */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-64 w-1"
+                   style={{ 
+                     background: 'linear-gradient(to bottom, transparent, #8B5CF6, transparent)',
+                     opacity: 0.3
+                   }}>
+              </div>
+              
+              {/* Left Side Roots */}
+              <div className="absolute left-1/2 top-0">
+                {[0, 1, 2].map((i) => (
+                  <div
+                    key={`left-${i}`}
+                    className="absolute"
+                    style={{
+                      left: '-120px',
+                      top: `${40 + (i * 80)}px`,
+                      width: '120px',
+                      height: '2px',
+                      transform: `rotate(${-30 - (i * 10)}deg)`,
+                      transformOrigin: 'right center',
+                      background: `linear-gradient(to left, transparent, #7C3AED)`,
+                      opacity: 0.4 + (i * 0.1)
+                    }}
+                  ></div>
+                ))}
+              </div>
+              
+              {/* Right Side Roots */}
+              <div className="absolute left-1/2 top-0">
+                {[0, 1, 2].map((i) => (
+                  <div
+                    key={`right-${i}`}
+                    className="absolute"
+                    style={{
+                      left: '0',
+                      top: `${40 + (i * 80)}px`,
+                      width: '120px',
+                      height: '2px',
+                      transform: `rotate(${30 + (i * 10)}deg)`,
+                      transformOrigin: 'left center',
+                      background: `linear-gradient(to right, transparent, #7C3AED)`,
+                      opacity: 0.4 + (i * 0.1)
+                    }}
+                  ></div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Floating Particles around Rocket */}
+            {[...Array(20)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute rounded-full animate-pulse"
+                style={{
+                  width: `${Math.random() * 3 + 1}px`,
+                  height: `${Math.random() * 3 + 1}px`,
+                  backgroundColor: `rgba(${Math.random() > 0.5 ? '139, 92, 246' : '79, 70, 229'}, 0.6)`,
+                  left: `${40 + Math.random() * 20}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 100}ms`,
+                  animationDuration: `${Math.random() * 3 + 2}s`
+                }}
+              ></div>
             ))}
+          </div>
+          
+          {/* Categories as End Points of Roots */}
+          <div className="mt-64">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+              {categories.map((category, index) => {
+                const isLeft = index % 2 === 0;
+                const row = Math.floor(index / 2);
+                const delay = index * 100;
+                
+                return (
+                  <div
+                    key={index}
+                    className={`relative ${isLeft ? 'md:mr-auto' : 'md:ml-auto'} transform hover:scale-105 transition-all duration-300`}
+                    style={{ 
+                      animationDelay: `${delay}ms`,
+                      marginTop: `${row * 20}px`
+                    }}
+                  >
+                    {/* Root Connection Line (Animated Growth) */}
+                    <div 
+                      className={`absolute top-1/2 w-24 h-0.5 hidden md:block ${isLeft ? '-left-24' : '-right-24'}`}
+                      style={{ 
+                        backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                        transformOrigin: isLeft ? 'right center' : 'left center',
+                        transform: 'scaleX(0)',
+                        animation: `growLine 0.8s ease-out ${delay + 300}ms forwards`
+                      }}
+                    ></div>
+                    
+                    {/* Category Node */}
+                    <div className="relative group">
+                      {/* Pulsing Effect */}
+                      <div className="absolute inset-0 rounded-full animate-ping opacity-20"
+                           style={{ 
+                             backgroundColor: '#8B5CF6',
+                             animationDelay: `${delay}ms`,
+                             animationDuration: '2s'
+                           }}>
+                      </div>
+                      
+                      {/* Root End Point */}
+                      <div 
+                        className="relative w-20 h-20 mx-auto mb-3 rounded-full flex items-center justify-center text-3xl shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl cursor-pointer"
+                        style={{
+                          backgroundColor: index % 3 === 0 ? '#4F46E5' : 
+                                          index % 3 === 1 ? '#7C3AED' : '#8B5CF6',
+                          boxShadow: '0 4px 20px rgba(139, 92, 246, 0.3)'
+                        }}
+                      >
+                        {category.icon}
+                        
+                        {/* Glow Effect on Hover */}
+                        <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                             style={{
+                               boxShadow: '0 0 30px rgba(139, 92, 246, 0.5)'
+                             }}>
+                        </div>
+                      </div>
+                      
+                      {/* Category Details */}
+                      <div className="text-center">
+                        <h3 className="font-bold text-gray-900 mb-1 text-sm md:text-base">{category.name}</h3>
+                        
+                        {/* Animated Course Count */}
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <div className="relative">
+                            <div 
+                              className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                              style={{ 
+                                opacity: 0,
+                                animation: `fadeIn 0.5s ease-out ${delay + 500}ms forwards`
+                              }}
+                            >
+                              {category.count}
+                            </div>
+                          </div>
+                          <span className="text-gray-500 text-sm">courses</span>
+                        </div>
+                        
+                        {/* Growth Bar */}
+                        <div className="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
+                          <div 
+                            className="h-full rounded-full transition-all duration-1000 ease-out"
+                            style={{
+                              width: '0%',
+                              backgroundColor: index % 3 === 0 ? '#4F46E5' : 
+                                              index % 3 === 1 ? '#7C3AED' : '#8B5CF6',
+                              animation: `growWidth 1s ease-out ${delay + 700}ms forwards`,
+                              animationFillMode: 'forwards'
+                            }}
+                            data-width={`${Math.min((category.count / 400) * 100, 100)}%`}
+                          ></div>
+                        </div>
+                        
+                        {/* Tiny Root Fibers */}
+                        <div className="absolute top-10 hidden md:block">
+                          {[...Array(2)].map((_, i) => (
+                            <div
+                              key={i}
+                              className={`absolute h-px w-3 ${isLeft ? '-left-8' : '-right-8'}`}
+                              style={{
+                                backgroundColor: 'rgba(139, 92, 246, 0.2)',
+                                top: `${i * 4}px`,
+                                transform: isLeft ? 'rotate(10deg)' : 'rotate(-10deg)',
+                                animation: `fadeIn 0.5s ease-out ${delay + 900 + (i * 100)}ms forwards`,
+                                opacity: 0
+                              }}
+                            ></div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Interactive Root Growth on Hover */}
+                    <div 
+                      className={`absolute top-1/2 w-12 h-0.5 hidden md:block ${isLeft ? '-left-36' : '-right-36'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                      style={{ 
+                        backgroundColor: '#7C3AED',
+                        transform: `scaleX(${isLeft ? -1 : 1})`
+                      }}
+                    ></div>
+                  </div>
+                );
+              })}
+            </div>
+            
+            {/* Ground Level with Soil */}
+            <div className="mt-20 pt-12 border-t border-gray-200 relative">
+              {/* Soil Texture */}
+              <div className="absolute -top-6 left-0 right-0 h-6 flex justify-center">
+                {[...Array(25)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-px h-4 mx-0.5"
+                    style={{
+                      backgroundColor: `hsl(${30 + Math.random() * 20}, 50%, ${40 + Math.random() * 20}%)`,
+                      transform: `translateY(${Math.sin(i * 0.5) * 2}px) rotate(${Math.random() * 10 - 5}deg)`,
+                      opacity: 0.4 + Math.random() * 0.3
+                    }}
+                  ></div>
+                ))}
+              </div>
+              
+              {/* Growth Message */}
+              <div className="text-center">
+                <p className="text-gray-600 mb-2">
+                  <span className="font-semibold" style={{ color: '#4F46E5' }}>{categories.reduce((sum, cat) => sum + cat.count, 0).toLocaleString()}+</span> courses growing from our learning rocket
+                </p>
+                <p className="text-gray-500 text-sm">
+                  Each root represents knowledge expanding in different directions
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -533,8 +782,49 @@ const Home = () => {
           {Math.round(scrollProgress)}%
         </div>
       </button>
+
+      {/* Add CSS for animations */}
+      <style jsx>{`
+        @keyframes growLine {
+          from {
+            transform: scaleX(0);
+          }
+          to {
+            transform: scaleX(1);
+          }
+        }
+        
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        
+        @keyframes growWidth {
+          from {
+            width: 0%;
+          }
+          to {
+            width: var(--target-width, 100%);
+          }
+        }
+      `}</style>
     </div>
   );
+};
+
+// CSS animations setup on component mount
+const setupAnimations = () => {
+  useEffect(() => {
+    // Set custom CSS property for width animations
+    document.querySelectorAll('[data-width]').forEach(el => {
+      const width = el.getAttribute('data-width');
+      el.style.setProperty('--target-width', width);
+    });
+  }, []);
 };
 
 export default Home;
